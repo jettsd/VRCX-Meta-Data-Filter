@@ -9,7 +9,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="MetadataExtractor" Version="2.9.0-rc2" />
+      <PackageReference Include="Hjg.Pngcs" Version="1.1.4" />
     </ItemGroup>
 
 </Project>

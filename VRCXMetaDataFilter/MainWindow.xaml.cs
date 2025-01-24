@@ -11,18 +11,27 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
 using System.Net.Mime;
-using MetadataExtractor;
-using MetadataExtractor.Formats.Png;
 using Directory = System.IO.Directory;
 using System.Text.Json;
+using Hjg.Pngcs;
+using Hjg.Pngcs.Chunks;
 
 namespace VRCXMetaDataFilter;
+
+
+
 
 /// <summary>
 /// Interaction logic for MainWindow.xaml
 /// </summary>
 public partial class MainWindow : Window
 {
+    public string name = "VRCXMetaDataFilter";
+    public string version = "0.0.5";
+    public string author = "Jettsd";
+    public string description = "Filter VRCX metadata";
+    public string url = "https://github.com/neoth/VRCXMetaDataFilter";
+    
     private Dictionary<string, string> PathPair = new Dictionary<string, string>();
 
     public MainWindow()
@@ -43,21 +52,15 @@ public partial class MainWindow : Window
 
         try
         {
+            
             foreach (string imgFile in Directory.EnumerateFiles(folderPath, "*.png", SearchOption.AllDirectories))
             {
-                var directories = ImageMetadataReader.ReadMetadata(imgFile); // Gives MetaDataExtractor each file
-                foreach (PngDirectory directory in directories.OfType<PngDirectory>()) // Goes through each piece of Metadata
+                PngReader pngReader = new PngReader(new FileStream(imgFile, FileMode.Open, FileAccess.Read, FileShare.Read), imgFile);
+                PngMetadata pngMetadata = pngReader.GetMetadata();
+                List<PngChunkTextVar> pngChunkTextVars = pngMetadata.GetTxtsForKey("Description");
+                foreach (PngChunkTextVar pngChunkTextVar in pngChunkTextVars)
                 {
-                    if (directory.Name == "PNG-iTXt") // Filter for text chunk
-                    {
-                        foreach (Tag tag in directory.Tags)
-                        {
-                            if (tag.Description.StartsWith("Description")) // Refines filter for metadata made by VRCX
-                            {
-                                PathPair[imgFile] = tag.Description;
-                            }
-                        }
-                    }
+                    PathPair[imgFile] = pngChunkTextVar.GetVal();
                 }
             }
         }
@@ -69,20 +72,28 @@ public partial class MainWindow : Window
 
     private void BtnFilter_OnClick(object sender, RoutedEventArgs e)
     {
+        bool hasResults = false;
         // Grab the folder path from the input field
         string folderPath = FolderPathInput.Text;
+        
+        // Grab text from the search field
+        string search = SearchRequest.Text;
 
         if (string.IsNullOrWhiteSpace(folderPath) || !Directory.Exists(folderPath))
         {
             MessageBox.Show("Please enter a valid folder path.", "Invalid Path", MessageBoxButton.OK, MessageBoxImage.Warning);
             return;
         }
+        if (string.IsNullOrWhiteSpace(search))
+        {
+            MessageBox.Show("You entered nothing!.", ":(", MessageBoxButton.OK, MessageBoxImage.Warning);
+            return;
+        }
 
         // Load files from the folder path
         LoadFiles(folderPath);
 
-        // Grab text from the search field
-        string search = SearchRequest.Text;
+
 
         PicDisplay.Children.Clear();
 
@@ -91,9 +102,12 @@ public partial class MainWindow : Window
         {
             string imgPath = path.Key;
             string imgMetadata = path.Value;
+            
 
             if (imgMetadata.Contains(search))
             {
+                // If we've found a match, set the flag to true'
+                hasResults = true;
                 // Create an image for display
                 Image imageResult = new Image();
                 imageResult.Width = 150;
@@ -124,6 +138,14 @@ public partial class MainWindow : Window
                 // Add the button to the PicDisplay panel
                 PicDisplay.Children.Add(imgBtn);
             }
+
+
         }
+        // If no results were found, display a message
+        if (hasResults == false)
+        {
+            MessageBox.Show("No results found take more pictures!", "No Results", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+        
     }
 }

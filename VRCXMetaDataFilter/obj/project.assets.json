@@ -2,80 +2,43 @@
   "version": 3,
   "targets": {
     "net8.0-windows7.0": {
-      "MetadataExtractor/2.9.0-rc2": {
+      "Hjg.Pngcs/1.1.4": {
         "type": "package",
-        "dependencies": {
-          "XmpCore": "6.1.10.1"
-        },
         "compile": {
-          "lib/net8.0/MetadataExtractor.dll": {
-            "related": ".xml"
+          "lib/net6.0/Hjg.Pngcs.dll": {
+            "related": ".pdb"
           }
         },
         "runtime": {
-          "lib/net8.0/MetadataExtractor.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "XmpCore/6.1.10.1": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/XmpCore.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/XmpCore.dll": {
-            "related": ".xml"
+          "lib/net6.0/Hjg.Pngcs.dll": {
+            "related": ".pdb"
           }
         }
       }
     }
   },
   "libraries": {
-    "MetadataExtractor/2.9.0-rc2": {
-      "sha512": "1S8DFi4AvsvYZ/GV5JwQMH7xEbJAyG6C7cOKVmmC9iq495z+ZKDN2EYggcoJzXxrWlmixet6Cha5StUwRlNNew==",
+    "Hjg.Pngcs/1.1.4": {
+      "sha512": "uk7W9QPzgUIsCVHSCxKcr2ptzCMPXgCzfrlKMlGd7hICVBorvhyGdeThAO73yITpueIhHOolhGgHS3BwgZuo5Q==",
       "type": "package",
-      "path": "metadataextractor/2.9.0-rc2",
+      "path": "hjg.pngcs/1.1.4",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "README.md",
-        "lib/net462/MetadataExtractor.dll",
-        "lib/net462/MetadataExtractor.xml",
-        "lib/net8.0/MetadataExtractor.dll",
-        "lib/net8.0/MetadataExtractor.xml",
-        "lib/netstandard1.3/MetadataExtractor.dll",
-        "lib/netstandard1.3/MetadataExtractor.xml",
-        "lib/netstandard2.1/MetadataExtractor.dll",
-        "lib/netstandard2.1/MetadataExtractor.xml",
-        "metadata-extractor-logo-128.png",
-        "metadataextractor.2.9.0-rc2.nupkg.sha512",
-        "metadataextractor.nuspec"
-      ]
-    },
-    "XmpCore/6.1.10.1": {
-      "sha512": "/Tp2/e39e7z8hLtS4TXt0FNNZHbf5yNFfHS0/59soXlgOzZlyRZivvzWpvujyaWkTWWgecp/1nHxkuc5vntn7A==",
-      "type": "package",
-      "path": "xmpcore/6.1.10.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net35/XmpCore.dll",
-        "lib/net35/XmpCore.xml",
-        "lib/netstandard1.0/XmpCore.dll",
-        "lib/netstandard1.0/XmpCore.xml",
-        "lib/netstandard2.0/XmpCore.dll",
-        "lib/netstandard2.0/XmpCore.xml",
-        "xmpcore.6.1.10.1.nupkg.sha512",
-        "xmpcore.nuspec"
+        "hjg.pngcs.1.1.4.nupkg.sha512",
+        "hjg.pngcs.nuspec",
+        "lib/net6.0/Hjg.Pngcs.dll",
+        "lib/net6.0/Hjg.Pngcs.pdb",
+        "lib/netstandard2.0/Hjg.Pngcs.dll",
+        "lib/netstandard2.0/Hjg.Pngcs.pdb",
+        "license.txt",
+        "readme.md"
       ]
     }
   },
   "projectFileDependencyGroups": {
     "net8.0-windows7.0": [
-      "MetadataExtractor >= 2.9.0-rc2"
+      "Hjg.Pngcs >= 1.1.4"
     ]
   },
   "packageFolders": {
@@ -123,15 +86,16 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      }
+      },
+      "SdkAnalysisLevel": "9.0.100"
     },
     "frameworks": {
       "net8.0-windows7.0": {
         "targetAlias": "net8.0-windows",
         "dependencies": {
-          "MetadataExtractor": {
+          "Hjg.Pngcs": {
             "target": "Package",
-            "version": "[2.9.0-rc2, )"
+            "version": "[1.1.4, )"
           }
         },
         "imports": [
@@ -153,7 +117,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

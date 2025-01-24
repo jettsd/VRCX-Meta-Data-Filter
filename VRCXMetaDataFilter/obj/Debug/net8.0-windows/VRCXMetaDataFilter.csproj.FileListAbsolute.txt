@@ -18,6 +18,5 @@ C:\Users\neoth\RiderProjects\VRCXMetaDataFilter\VRCXMetaDataFilter\obj\Debug\net
 C:\Users\neoth\RiderProjects\VRCXMetaDataFilter\VRCXMetaDataFilter\obj\Debug\net8.0-windows\VRCXMetaDataFilter.genruntimeconfig.cache
 C:\Users\neoth\RiderProjects\VRCXMetaDataFilter\VRCXMetaDataFilter\obj\Debug\net8.0-windows\ref\VRCXMetaDataFilter.dll
 C:\Users\neoth\RiderProjects\VRCXMetaDataFilter\VRCXMetaDataFilter\obj\Debug\net8.0-windows\VRCXMetaDataFilter.csproj.AssemblyReference.cache
-C:\Users\neoth\RiderProjects\VRCXMetaDataFilter\VRCXMetaDataFilter\bin\Debug\net8.0-windows\MetadataExtractor.dll
-C:\Users\neoth\RiderProjects\VRCXMetaDataFilter\VRCXMetaDataFilter\bin\Debug\net8.0-windows\XmpCore.dll
 C:\Users\neoth\RiderProjects\VRCXMetaDataFilter\VRCXMetaDataFilter\obj\Debug\net8.0-windows\VRCXMeta.2C348FA2.Up2Date
+C:\Users\neoth\RiderProjects\VRCXMetaDataFilter\VRCXMetaDataFilter\bin\Debug\net8.0-windows\Hjg.Pngcs.dll
