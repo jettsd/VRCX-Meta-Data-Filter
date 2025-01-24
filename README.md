@@ -11,4 +11,4 @@ Extract the zip into a folder and run the .exe
 # Credits
 [hjg.pngcs](https://www.nuget.org/packages/hjg.pngcs)
 [VRCX](https://github.com/vrcx-team/VRCX)
-[WPF Theme Library]([https://github.com/vrcx-team/VRCX](https://github.com/AngryCarrot789/WPFDarkTheme))
+[WPF Theme Library](https://github.com/AngryCarrot789/WPFDarkTheme](https://github.com/AngryCarrot789/WPFDarkTheme)
