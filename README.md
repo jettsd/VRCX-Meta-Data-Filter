@@ -1,5 +1,5 @@
 # VRCX meta data extrator
-THIS PROGRAM IS VERY EARLY IN DEV IT IS EXTREAMLY SLOW IN ITS CURRENT FORM...
+THIS PROGRAM IS VERY EARLY IN DEV
 This is a program designed to make it easier to find photos of specifc people in VRChat
  
 # Dependencies
