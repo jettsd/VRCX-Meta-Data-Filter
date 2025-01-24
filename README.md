@@ -7,3 +7,7 @@ This program only works for photos that have been taken while running [VRCX](htt
 
 # Installation
 Extract the zip into a folder and run the .exe
+
+# Credits
+[hjg.pngcs](https://www.nuget.org/packages/hjg.pngcs)
+[VRCX](https://github.com/vrcx-team/VRCX)
