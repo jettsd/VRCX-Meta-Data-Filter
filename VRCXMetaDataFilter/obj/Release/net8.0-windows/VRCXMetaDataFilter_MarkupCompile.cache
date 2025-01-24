@@ -10,11 +10,11 @@ none
 false
 TRACE;RELEASE;NET;NET8_0;NETCOREAPP
 C:\Users\neoth\RiderProjects\VRCXMetaDataFilter\VRCXMetaDataFilter\App.xaml
-11407045341
+131900731379
 
-5-1056810006
+17-1837935092
 199485506390
-MainWindow.xaml;
+MainWindow.xaml;Themes\ColourDictionaries\DarkGreyTheme.xaml;Themes\ColourDictionaries\DeepDark.xaml;Themes\ColourDictionaries\GreyTheme.xaml;Themes\ColourDictionaries\LightTheme.xaml;Themes\ColourDictionaries\RedBlackTheme.xaml;Themes\ColourDictionaries\SoftDark.xaml;Themes\ColourfulDarkTheme.xaml;Themes\ColourfulLightTheme.xaml;Themes\ControlColours.xaml;Themes\Controls.xaml;Themes\DarkTheme.xaml;Themes\LightTheme.xaml;
 
-False
+True
 

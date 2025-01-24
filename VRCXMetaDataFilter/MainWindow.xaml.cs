@@ -27,25 +27,29 @@ namespace VRCXMetaDataFilter;
 public partial class MainWindow : Window
 {
     public string name = "VRCXMetaDataFilter";
-    public string version = "0.0.5";
+    public string version = "0.0.6";
     public string author = "Jettsd";
     public string description = "Filter VRCX metadata";
     public string url = "https://github.com/neoth/VRCXMetaDataFilter";
     
     private Dictionary<string, string> PathPair = new Dictionary<string, string>();
+    string jsonfile = "config.json";
+
+   
 
     public MainWindow()
     {
         InitializeComponent();
+        
+        // Load the folder path from the config file
+        if (File.Exists("config.json"))
+        {
+            string jsonReader = File.ReadAllText(jsonfile);
+            string folderPathJson = JsonSerializer.Deserialize<string>(jsonReader);
+            FolderPathInput.Text = folderPathJson;
+        }
     }
-
-    // TextChangedEventHandler delegate method.
-    private void textChangedEventHandler(object sender, TextChangedEventArgs args)
-    {
-        // Omitted Code: Insert code that does something whenever
-        // the text changes...
-    } // end textChangedEventHandler
-
+    
     private void LoadFiles(string folderPath)
     {
         PathPair.Clear(); // Clear the dictionary to avoid duplicate entries
@@ -75,9 +79,12 @@ public partial class MainWindow : Window
         bool hasResults = false;
         // Grab the folder path from the input field
         string folderPath = FolderPathInput.Text;
+        string jsonstring = JsonSerializer.Serialize(folderPath);
+        File.WriteAllText(jsonfile, jsonstring);
         
         // Grab text from the search field
         string search = SearchRequest.Text;
+        
 
         if (string.IsNullOrWhiteSpace(folderPath) || !Directory.Exists(folderPath))
         {

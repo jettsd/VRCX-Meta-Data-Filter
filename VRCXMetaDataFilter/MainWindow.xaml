@@ -3,6 +3,8 @@
     MinHeight="500"
     MinWidth="526"
     ResizeMode="CanResize"
+    Style="{DynamicResource CustomWindowStyle}"
+    Title="VRCXMetaDataFilter"
     d:DesignHeight="800"
     d:DesignWidth="526"
     mc:Ignorable="d"
@@ -11,6 +13,8 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+
 
     <Grid Background="{DynamicResource Theme_BackgroundBrush}">
         <!--  Define Grid Rows  -->
@@ -61,7 +65,6 @@
             Margin="0,56,8,0"
             Name="SearchRequest"
             Text="Search"
-            TextChanged="textChangedEventHandler"
             VerticalAlignment="Top" />
 
         <!--  Filter Button  -->
@@ -84,7 +87,6 @@
             Margin="8"
             VerticalScrollBarVisibility="Auto">
             <WrapPanel
-                Background="#FFF0F0F0"
                 HorizontalAlignment="Stretch"
                 Name="PicDisplay"
                 VerticalAlignment="Top" />
